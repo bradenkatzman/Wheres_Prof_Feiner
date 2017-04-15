@@ -16,7 +16,6 @@ public class MapResize_Script : MonoBehaviour {
 		this.rTrans_Panel = transform.GetComponent<RectTransform> ();
 		this.initialScale_Panel = rTrans_Panel.localScale;
 		this.initialYPos = rTrans_Panel.anchoredPosition.y;
-		Debug.Log (initialYPos);
 
 		ResizeMap_Button.onClick.AddListener (ResizeMap);
 
