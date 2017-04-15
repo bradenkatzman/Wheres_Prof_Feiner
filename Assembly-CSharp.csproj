@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Location_Diagnostics_Script.cs" />
+     <Compile Include="Assets\Scripts\MapResize_Script.cs" />
      <None Include="Assets\Scripts\scripts_info.txt" />
      <None Include="Assets\Models\models_info.txt" />
      <None Include="Assets\Scenes\scenes_info.txt" />
