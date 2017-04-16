@@ -11,6 +11,8 @@ public class MapResize_Script : MonoBehaviour {
 	private float initialYPos;
 
 	private bool expanded;
+	private string EXPAND = "Expand";
+	private string MINIMIZE = "Minimize";
 
 	void Start () {
 		this.rTrans_Panel = transform.GetComponent<RectTransform> ();
@@ -26,10 +28,12 @@ public class MapResize_Script : MonoBehaviour {
 		if (expanded) {
 			rTrans_Panel.localScale = new Vector3 (initialScale_Panel.x, initialScale_Panel.y, initialScale_Panel.z);
 			rTrans_Panel.anchoredPosition = new Vector3 (0, initialYPos, 0);
+			ResizeMap_Button.GetComponentInChildren<Text> ().text = EXPAND;
 			expanded = false;
 		} else {
 			rTrans_Panel.localScale = new Vector3(initialScale_Panel.x * 2.0f, initialScale_Panel.y * 2.0f, initialScale_Panel.z * 2.0f);
 			rTrans_Panel.anchoredPosition = new Vector3 (0, -430.0f, 0);
+			ResizeMap_Button.GetComponentInChildren<Text> ().text = MINIMIZE;
 			expanded = true;
 		}
 	}
