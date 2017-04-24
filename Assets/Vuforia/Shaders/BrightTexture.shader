@@ -1,5 +1,10 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+<<<<<<< HEAD
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+=======
+>>>>>>> 2f58bfc643da8d811e07b94e1a353d25d22e7cd1
 Shader "Custom/BrightTexture" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
@@ -27,7 +32,11 @@ Shader "Custom/BrightTexture" {
         v2f vert (appdata_base v)
         {
             v2f o;
+<<<<<<< HEAD
             o.pos = UnityObjectToClipPos (v.vertex);
+=======
+            o.pos = UnityObjectToClipPos (v.vertex);
+>>>>>>> 2f58bfc643da8d811e07b94e1a353d25d22e7cd1
             o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
             return o;
         }

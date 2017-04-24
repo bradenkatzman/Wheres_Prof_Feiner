@@ -1,7 +1,11 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Intro.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/Scenes/Alma.unity
+=======
+- path: Assets/Scenes/Checkpoint_4.unity
+>>>>>>> 2f58bfc643da8d811e07b94e1a353d25d22e7cd1
   isLoaded: 1
   isActive: 1

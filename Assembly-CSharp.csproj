@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DialoguePanel.cs" />
+     <Compile Include="Assets\Scripts\Location_Script.cs" />
+     <Compile Include="Assets\Scripts\MapResize_Script.cs" />
+     <Compile Include="Assets\Scripts\Minimap_Location_Script.cs" />
      <Compile Include="Assets\Scripts\Runner.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
