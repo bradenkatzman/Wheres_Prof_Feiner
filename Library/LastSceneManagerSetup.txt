@@ -1,0 +1,7 @@
+sceneSetups:
+- path: Assets/Intro.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Alma.unity
+  isLoaded: 1
+  isActive: 1
