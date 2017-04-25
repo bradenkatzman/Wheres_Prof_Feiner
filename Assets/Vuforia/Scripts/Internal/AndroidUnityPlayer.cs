@@ -162,7 +162,11 @@ namespace Vuforia
 
         private int InitVuforia(int rendererAPI, string licenseKey)
         {
+<<<<<<< HEAD
             int errorcode = -1;
+=======
+            int errorcode = -1;
+>>>>>>> 2f58bfc643da8d811e07b94e1a353d25d22e7cd1
 #if UNITY_ANDROID
             LoadNativeLibrariesFromJava();
             if (mVuforiaInitializer != null)
