@@ -32,7 +32,7 @@ public class MapResize_Script : MonoBehaviour {
 			expanded = false;
 		} else {
 			rTrans_Panel.localScale = new Vector3(initialScale_Panel.x * 2.0f, initialScale_Panel.y * 2.0f, initialScale_Panel.z * 2.0f);
-			rTrans_Panel.anchoredPosition = new Vector3 (0, -430.0f, 0);
+			rTrans_Panel.anchoredPosition = new Vector3 (0, -223.0f, 0);
 			ResizeMap_Button.GetComponentInChildren<Text> ().text = MINIMIZE;
 			expanded = true;
 		}

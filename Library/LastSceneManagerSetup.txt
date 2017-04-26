@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Checkpoint_4.unity
+- path: Assets/Scenes/Coordinate_Diagnostics_Scene.unity
   isLoaded: 1
   isActive: 1
