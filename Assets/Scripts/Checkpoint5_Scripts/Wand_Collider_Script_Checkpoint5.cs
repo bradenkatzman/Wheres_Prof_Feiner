@@ -36,3 +36,4 @@ public class Wand_Collider_Script_Checkpoint5 : MonoBehaviour {
 		}
 	}
 }
+
