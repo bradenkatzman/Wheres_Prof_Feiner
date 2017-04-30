@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="acid-wand" size="2.000000 6.035156" />
+    <ImageTarget name="checkpoint-3-5" size="9.312500 5.850875" />
+    <ImageTarget name="checkpoint-4" size="9.312500 6.216484" />
+    <ImageTarget name="checkpoint-5" size="9.312500 8.881865" />
+    <ImageTarget name="checkpoint-3" size="9.312500 11.119861" />
+    <ImageTarget name="checkpoint-5-5" size="9.312500 4.317268" />
+    <ImageTarget name="checkpoint-1" size="9.312500 7.269606" />
+    <ImageTarget name="checkpoint-6" size="9.312500 6.756934" />
+    <ImageTarget name="checkpoint-2" size="9.312500 5.727406" />
+  </Tracking>
+</QCARConfig>

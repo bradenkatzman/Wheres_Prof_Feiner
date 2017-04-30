@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PaperAirplane_Flying_Script : MonoBehaviour {
 
@@ -9,6 +10,12 @@ public class PaperAirplane_Flying_Script : MonoBehaviour {
 	public GameObject TopRight;
 	public GameObject BottomLeft;
 	public GameObject BottomRight;
+	public GameObject WandTip;
+
+	public GameObject Letter_Panel;
+	public Button Letter_Dismiss_Button;
+
+	private bool planeSelected;
 
 	public float translateSpeed;
 
@@ -20,6 +27,13 @@ public class PaperAirplane_Flying_Script : MonoBehaviour {
 
 	void Start () {
 		curr_direction = towardBottomRight;
+		Letter_Dismiss_Button.onClick.AddListener (LetterDismissButtonPressed);
+	}
+
+	void LetterDismissButtonPressed() {
+		if (Letter_Panel.activeSelf) {
+			Letter_Panel.SetActive (false);
+		}
 	}
 
 	void Update () {
@@ -69,6 +83,22 @@ public class PaperAirplane_Flying_Script : MonoBehaviour {
 				float translateStep = translateSpeed * Time.deltaTime;
 				transform.position = Vector3.MoveTowards (transform.position, TopLeft.transform.position, translateStep);
 			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		Debug.Log ("Collision");
+		if (other.name == WandTip.name) {
+			if (planeSelected) {
+				Debug.Log ("Plane deselected");
+				planeSelected = false;
+			} else {
+				Debug.Log ("paper airplane selected");
+				planeSelected = true;
+				Letter_Panel.SetActive (true);
+			}
+
+			// enter the dialogue that displays the contents of the letter/email
 		}
 	}
 }
