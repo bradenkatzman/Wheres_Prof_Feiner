@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainScene.unity
+- path: Assets/Scenes/Ashley_Braden_Scene.unity
   isLoaded: 1
   isActive: 1

@@ -21,8 +21,9 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 	public GameObject Dialogue_Panel;
 	public GameObject Dialogue_PreBribe_Text;
 	public GameObject Dialogue_PostBribe_Text;
-	public GameObject Dialogue_AlreadyPaid_Text;
 	public Button Dismiss_Dialogue_Button;
+
+	public Text bagMoneyText;
 
 	private bool selected;
 
@@ -43,40 +44,36 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 		Dialogue_Panel.SetActive(false);
 		Dialogue_PreBribe_Text.SetActive(false);
 		Dialogue_PostBribe_Text.SetActive(false);
-		Dialogue_AlreadyPaid_Text.SetActive(false);
 	}
 
 	void OnTriggerEnter(Collider other) {
 		if (other.name.ToLower() == Money_GameObject_Name.ToLower()) {
 			//Debug.Log ("Goblin paid");
 			goblinPaid = true;
+			other.gameObject.SetActive (false);
+			// subtract money text in bag to read 0
+			bagMoneyText.text = "0";
 		} else if (other.name == WandTip.name) {
 			if (selected) {
-				Debug.Log ("deselecting");
 				selected = false;
 				Dialogue_Panel.SetActive(false);
 				Dialogue_PreBribe_Text.SetActive(false);
 				Dialogue_PostBribe_Text.SetActive(false);
-				Dialogue_AlreadyPaid_Text.SetActive(false);
 			} else {
 				selected = true;
 
 				// check if the Goblin has already been paid
 				if (goblinPaid) {
-					Debug.Log ("goblin already paid");
 					// enter dialogue telling the user to get a move on with the game
 					Dialogue_Panel.SetActive(true);
 					Dialogue_PreBribe_Text.SetActive(false);
 					Dialogue_PostBribe_Text.SetActive(false);
-					Dialogue_AlreadyPaid_Text.SetActive(true);
 
 				} else {
-					Debug.Log ("pre bribe");
 					// enter dialogue where goblin tells the user that it'll need a bribe to give the clue
 					Dialogue_Panel.SetActive(true);
 					Dialogue_PreBribe_Text.SetActive(true);
 					Dialogue_PostBribe_Text.SetActive(false);
-					Dialogue_AlreadyPaid_Text.SetActive(false);
 				}
 			}
 		}
@@ -111,7 +108,6 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 				Dialogue_Panel.SetActive(true);
 				Dialogue_PreBribe_Text.SetActive(false);
 				Dialogue_PostBribe_Text.SetActive(true);
-				Dialogue_AlreadyPaid_Text.SetActive(false);
 		}
 	}
 
