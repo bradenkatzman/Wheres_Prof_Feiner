@@ -23,7 +23,7 @@ public class Bag : MonoBehaviour {
 
 	public GameObject checkpointMoney;
 
-	//used for ataching to wand
+	//used for attaching to wand
 	public GameObject bottle;
 	public GameObject money;
 	public GameObject tix;
@@ -42,7 +42,7 @@ public class Bag : MonoBehaviour {
 	public Text tixText;
 
 	public void OpenModel() {
-		if (bagModel.active) {
+		if (bagModel.activeSelf) {
 			openBagButtonText.text = "Open Bag";
 			bagModel.SetActive (false);
 		} else {
@@ -53,12 +53,12 @@ public class Bag : MonoBehaviour {
 	}
 
 	public void showAdd() {
-		if (add.gameObject.active) {
+		if (add.gameObject.activeSelf) {
 			add.gameObject.SetActive (false);
 		} else {
 			add.gameObject.SetActive (true);
 		}
-		if (addText.gameObject.active) {
+		if (addText.gameObject.activeSelf) {
 			addText.gameObject.SetActive (false);
 		} else {
 			addText.gameObject.SetActive (true);
@@ -78,7 +78,7 @@ public class Bag : MonoBehaviour {
 		//attach to wand
 		if (bottleSelected) {
 			if (bottleText.text != "0") {
-				if (bottle.active) {
+				if (bottle.activeSelf) {
 					bottle.SetActive (false);
 				} else {
 					bottle.SetActive (true);
@@ -90,7 +90,7 @@ public class Bag : MonoBehaviour {
 //			moneyNum = 0;
 //			moneyText.text =  moneyNum.ToString();
 			if (moneyText.text != "0") {
-				if (money.active) {
+				if (money.activeSelf) {
 					money.SetActive (false);
 				} else {
 					money.SetActive (true);
@@ -101,7 +101,7 @@ public class Bag : MonoBehaviour {
 //			tixNum = 0;
 //			tixText.text = tixNum.ToString();
 			if (tixText.text != "0") {
-				if (tix.active) {
+				if (tix.activeSelf) {
 					tix.SetActive (false);
 				} else {
 					tix.SetActive (true);

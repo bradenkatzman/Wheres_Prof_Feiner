@@ -26,6 +26,7 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 	public Text bagMoneyText;
 
 	private bool selected;
+	private bool clueIndicated;
 
 	// Use this for initialization
 	void Start () {
@@ -36,14 +37,21 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 		right_direction = 1;
 		curr_direction = left_direction;
 
-		this.selected = goblinPaid = false;
-		Dismiss_Dialogue_Button.onClick.AddListener (DismissDialogueButtonPressed);
+		this.selected = goblinPaid = clueIndicated =  false;
+		//Dismiss_Dialogue_Button.onClick.AddListener (DismissDialogueButtonPressed);
 	}
 
-	void DismissDialogueButtonPressed() {
+	public void DismissDialogueButtonPressed() {
+		Debug.Log ("dismissing");
+		Debug.Log (Dialogue_Panel.activeSelf.ToString () + ", " +
+			Dialogue_PreBribe_Text.activeSelf.ToString () + ", " +
+			Dialogue_PostBribe_Text.activeSelf.ToString ());
 		Dialogue_Panel.SetActive(false);
 		Dialogue_PreBribe_Text.SetActive(false);
 		Dialogue_PostBribe_Text.SetActive(false);
+		Debug.Log (Dialogue_Panel.activeSelf.ToString () + ", " +
+			Dialogue_PreBribe_Text.activeSelf.ToString () + ", " +
+			Dialogue_PostBribe_Text.activeSelf.ToString ());
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -103,11 +111,12 @@ public class Goblin_Money_Collider_Script : MonoBehaviour {
 		}
 
 		// if the goblin is selected, continuously check for the bribe payment
-		if (selected && goblinPaid) {
+		if (selected && goblinPaid & !clueIndicated) {
 				// enter diaglogue telling the user what the next clue is
 				Dialogue_Panel.SetActive(true);
 				Dialogue_PreBribe_Text.SetActive(false);
 				Dialogue_PostBribe_Text.SetActive(true);
+			clueIndicated = true;
 		}
 	}
 

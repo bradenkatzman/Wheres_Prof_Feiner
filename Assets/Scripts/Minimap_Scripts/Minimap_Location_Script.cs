@@ -51,8 +51,6 @@ public class Minimap_Location_Script : MonoBehaviour {
 	private int LAT_IDX = 0;
 	private int LONG_IDX = 1;
 
-	private Location_Script locationScript;
-
 	public Image Map_Image;
 	private RectTransform mapImageRectTransform;
 	private float mapImageW;
@@ -64,7 +62,6 @@ public class Minimap_Location_Script : MonoBehaviour {
 	private bool initialized = false;
 
 	void Start () {
-		locationScript = GetComponent<Location_Script> ();
 
 		this.mapImageRectTransform = Map_Image.rectTransform;
 		this.mapImageW = mapImageRectTransform.rect.width;
