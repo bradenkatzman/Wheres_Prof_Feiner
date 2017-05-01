@@ -49,7 +49,6 @@ public class Bag : MonoBehaviour {
 			openBagButtonText.text = "Close Bag";
 			bagModel.SetActive (true);
 		}
-		Debug.Log ("Open Model");
 	}
 
 	public void showAdd() {
@@ -63,7 +62,6 @@ public class Bag : MonoBehaviour {
 		} else {
 			addText.gameObject.SetActive (true);
 		}
-		Debug.Log ("Toggle Add Control");
 	}
 
 	void showAttach() {
